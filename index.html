@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>いのりーさんへ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/><circle cx="40" cy="30" r="1.5" fill="white" opacity="0.2"/><circle cx="70" cy="20" r="1" fill="white" opacity="0.4"/><circle cx="85" cy="60" r="1.2" fill="white" opacity="0.3"/><circle cx="25" cy="70" r="1" fill="white" opacity="0.25"/><circle cx="60" cy="85" r="1.3" fill="white" opacity="0.35"/></svg>');
+            background-size: 200px 200px;
+            animation: rain 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rain {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 200px; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 700px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .decoration {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            opacity: 0.2;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #764ba2;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+            line-height: 2;
+        }
+
+        .recipient {
+            font-size: 20px;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            font-size: 17px;
+            line-height: 2.2;
+            color: #444;
+            text-indent: 1em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .items {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .item {
+            text-align: center;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .item:nth-child(1) { animation-delay: 0s; }
+        .item:nth-child(2) { animation-delay: 0.3s; }
+        .item:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .item-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .item-label {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .emphasis {
+            font-size: 22px;
+            text-align: center;
+            margin-top: 30px;
+            color: #764ba2;
+            font-weight: bold;
+            letter-spacing: 3px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .weather {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .content {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="weather">☔</div>
+        <div class="decoration">📚</div>
+        
+        <h1>拝啓</h1>
+        
+        <div class="recipient">
+            これから勉強を頑張る予定の<br>"いのりーさん"へ
+        </div>
+        
+        <div class="content">
+            今日の天気は雨。しっとり物静かな心持ちだと存じますが、それでも集中できるようにと環境を整えました。
+        </div>
+        
+        <div class="content">
+            目の前にあるラムネとチョコは脳に十分な糖分を送り込み、存分にその力が発揮できることでしょう。そして、水分。体の約何割かは水分らしいので取る方が良いかもしれません。
+        </div>
+        
+        <div class="items">
+            <div class="item">
+                <div class="item-icon">🍬</div>
+                <div class="item-label">ラムネ</div>
+            </div>
+            <div class="item">
+                <div class="item-icon">🍫</div>
+                <div class="item-label">チョコ</div>
+            </div>
+            <div class="item">
+                <div class="item-icon">💧</div>
+                <div class="item-label">水分</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            最後に酸素も大切です。呼吸を意識して集中！
+        </div>
+        
+        <div class="emphasis">
+            ｼｭｳﾁｭｳ
+        </div>
+    </div>
+</body>
+</html>
